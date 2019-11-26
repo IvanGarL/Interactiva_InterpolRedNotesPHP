@@ -1,6 +1,7 @@
 <nav id="sidebar">
-	<div class="sidebar-header">
+	<div class="sidebar-header text-center">
 		
+		<img src="./img/sidebar_icon.jpg" alt="police_badge" class="img-circular">
 		<p class="text-center">
 		<span class="title-sideheader"><br />
 			Sistema de información de notificaciones rojas de Interpol</span><br />

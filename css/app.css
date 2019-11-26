@@ -112,6 +112,14 @@ ul.nav li a.nav-link{
     text-align: center;
 }
 
+.margined{
+    margin: 4px;
+}
+
+.middle{
+    width: 40%;
+}
+
 #sidebar.active .sidebar-header p,
 #sidebar.active .CTAs {
     display: none;
@@ -225,7 +233,16 @@ body {
     line-height: 1.8; /* Space between lines of information */
     color: rgba(0, 0, 0, 0.7); 
 }
+.form{
+    margin-top: 15px;
+    padding: 10px;
+}
 
+.form-box{
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 4px 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 @media screen and (max-width: 1024px) { /* Set a diferent font-size to small devices with @media screen rule */
     body {
         font-size: 16px; 

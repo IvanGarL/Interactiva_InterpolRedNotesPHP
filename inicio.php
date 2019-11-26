@@ -20,30 +20,49 @@ session_start();
 		</div>
 	</nav>
 	
-	<div id="main" class="row" style="margin-left:1px">
-		<div class="card beauty"">
-			<div class="card-body">
-				<h5 class="h-negro"><i class="fas fa-home "></i>&nbsp;PPP</h5>
-				<p class="card-text"></p>
-				<a href="configuracionPregrado.php" class="btn btn-primary">Configurar</a>
-			</div>
-		</div>
-
-		<div class="card beauty">
-			<div class="card-body">
-				<h5 class="h-negro"><i class="fas fa-user-graduate "></i>&nbsp;PPP</h5>
-				<p class="card-text"></p>
-				<a href="configuracionPosgrado.php" class="btn btn-primary">Configurar</a>
-			</div>
-		</div>
-
-		<div class="card beauty">
-			<div class="card-body">
-				<h5 class="h-negro"><i class="fas fa-calendar "></i>&nbsp;PPP</h5>
-				<p class="card-text"></p>
-				<a href="configuracionPeriodos.php" class="btn btn-primary">Configurar</a>
-			</div>
-		</div>
+    <div id="main" class="row">
+		<div class="col-lg-12 col-md-12 col-xs-12 form">
+            <h3>Buscar</h3>
+            <form class="form-box" autocomplete="off" method="post" action="configuracionPosgrado.php">
+            <div class="row">
+                <div class="col-lg-4 col-md-5 col-xs-12 margined">
+                    <div class="form-group">
+                        <strong><label for="name">Nombre</label></strong>
+                        <input type="text" class="form-control" id="name" placeholder="Pepito">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-xs-12 margined">
+                    <div class="form-group">
+                        <strong><label for="forename">Apellido</label></strong>
+                        <input type="text" class="form-control" id="forename" placeholder="Perez">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-xs-12 margined">
+                    <div class="form-group">
+                        <strong><label for="nationality">Nacionalidad</label></strong>
+                        <select id="nationality" class="form-control" placeholder="pais">
+                            <option name="nothing" value=""> Seleccionar pais...</option>
+                        </select>                    
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-xs-12 margined">
+                    <div class="row">
+                        <label for="ageMin" class="col-12"><strong>Edad actual</strong></label>
+                        <input type="number" class="form-control col-3" id="ageMin" name="ageMin" placeholder="0" min="0">
+                        <label for="ageMax" class="col-3 text-center">a</label>
+                        <input type="number" class="form-control col-3" id="ageMax" name="ageMax" placeholder="120" min="0">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+        <hr/>
+        <div class="col-lg-12 col-md-12 col-xs-12">
+            <h3>Resultados de busqueda</h3>
+            <div id="query_results"class="row">
+                <!-- For each result it will be printed a card with the profile of the subject-->
+            </div>
+        </div>
 	</div>
 
 <?php } else {	?>
