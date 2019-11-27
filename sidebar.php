@@ -16,7 +16,7 @@
 	
 	<ul class="list-unstyled components polished">
 		<li>
-			<a href="inicio.php"><i class="fa fa-home"></i>&nbsp;Inicio</a>
+			<a href="start.php"><i class="fa fa-home"></i>&nbsp;Inicio</a>
 		</li>
 		<li>
 			<a href="#Perfil" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">

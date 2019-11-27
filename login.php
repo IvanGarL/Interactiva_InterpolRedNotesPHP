@@ -18,7 +18,7 @@ if(!empty($_POST["sid"]) && !empty($_POST["PIN"]))
         $_SESSION['usuarioex'] = $usuarioex;
         // $_SESSION['perfilex'] = $perfilex;
         // $_SESSION['estadoex']= $estadoex;
-        header ("Location: /Interactiva_InterpolRedNotesPHP/inicio.php");
+        header ("Location: /Interactiva_InterpolRedNotesPHP/start.php");
     }
     else {
 		

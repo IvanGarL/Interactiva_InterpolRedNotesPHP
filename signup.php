@@ -8,7 +8,7 @@ session_start();
 	if(isset($_SESSION["usuarioex"]))
 	{
 		session_start();
-		header ("Location: /AdministradorInformacionUniandes/inicio.php");
+		header ("Location: /Interactiva_InterpolRedNotesPHP/start.php");
 	}
 	else
 	{
