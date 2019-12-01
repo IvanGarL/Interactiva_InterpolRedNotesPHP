@@ -32,8 +32,8 @@
 	
 		<?php if(!isset($_SESSION["usuarioex"]) ){ ?>
 			<nav class="navbar navbar-default navbar-expand-md navbar-dark fixed-top">
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExamenes" aria-controls="navbarsExamenes" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon" style="color:#181818;"></span>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
 				</button>
 			</nav>
 			<main role="main" class="main-externo">

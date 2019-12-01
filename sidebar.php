@@ -23,19 +23,12 @@
 				<i class="fas fa-user"></i>&nbsp;Administrar 
 			</a>
 			<ul class="collapse list-unstyled sided" id="Perfil">
-				<?php if(true){ ?> <!-- Las condiciones son true para que en caso de necesitar revisar algo, se cambien -->
 				<li>
 					<a href="updateAccount.php"><i class="fa fa-pen"></i>&nbsp;Modificar datos</a>
 				</li>
-				<?php } ?>
 				<li>
-					<a href="listQuerys.php"><i class="fa fa-list-ul"></i>&nbsp;Mis consultas</a>
+					<a href="list.php"><i class="fa fa-list-ul"></i>&nbsp;Mis consultas</a>
 				</li>
-				<?php if(true){ ?>
-				<li>
-					<a href="query.php"><i class="fa fa-search"></i>&nbsp;Consultar listas</a>
-				</li>
-				<?php } ?>
 			</ul>
 		</li>
 		

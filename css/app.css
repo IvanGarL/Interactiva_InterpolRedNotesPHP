@@ -120,6 +120,18 @@ ul.nav li a.nav-link{
     width: 40%;
 }
 
+.form-padded{
+    padding-left: 40px;
+}
+
+.unpadded{
+    padding: 0;
+}
+
+.upmargined{
+    margin-top: 8px;
+}
+
 #sidebar.active .sidebar-header p,
 #sidebar.active .CTAs {
     display: none;
@@ -437,11 +449,32 @@ ul.social_icon{
     color: #ffff;
 }
 
-.card{
-    height: 80%;
+.card-beautify{
+    width: 13.5em;
+    height: 25em;
+    margin-bottom: 2em;
 }
 .container.foot{
     margin: 0px;
     width: 100%;
 }
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+
+.menu{
+    color: white;
+}
+.menu:hover{
+    color: white;
+}
+
+.img-profile{
+    margin: 2rem;
+    height: 80%;
+    width: 90%;
+}
+
   

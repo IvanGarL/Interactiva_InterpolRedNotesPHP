@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('Access-Control-Allow-Origin: *')
 ?>
 <!DOCTYPE html>
 <HTML lang="es">
@@ -11,8 +12,8 @@ session_start();
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark2">
 		<div class="container-fluid">
-			<button type="button" id="sidebarCollapse" class="btn btn-uniandes d-inline-block d-lg-none" aria-expanded="false" aria-label="Toggle navigation">
-				<i class="fas fa-align-left"></i>
+			<button type="button" id="sidebarCollapse" class="btn menu d-inline-block d-lg-none" aria-expanded="false" aria-label="Toggle navigation">
+				<i id="menu-icon" class="fas fa-align-left"></i>
 			</button>
 			&nbsp;&nbsp;
 			<br />
@@ -23,42 +24,66 @@ session_start();
     <div id="main" class="row">
 		<div class="col-lg-12 col-md-12 col-xs-12 form">
             <h3>Buscar</h3>
-            <form class="form-box" autocomplete="off" method="post" action="configuracionPosgrado.php">
-            <div class="row">
-                <div class="col-lg-4 col-md-5 col-xs-12 margined">
-                    <div class="form-group">
-                        <strong><label for="name">Nombre</label></strong>
-                        <input type="text" class="form-control" id="name" placeholder="Pepito">
+            <form class="form-box" autocomplete="on">
+                <input type="hidden" id="hidden_username" name="username" value=<?php echo $_SESSION['usuarioex']?>>			
+                <input type="hidden" id="hidden_total" name="total" value="">	
+
+                <div class="row form-padded">
+                    <div class="col-lg-3 col-md-4 col-xs-12 margined">
+                        <div class="form-group">
+                            <strong><label for="forename">Nombre</label></strong>
+                            <input type="text" class="form-control" name="forename" id="forename" placeholder="Pepito">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-5 col-xs-12 margined">
-                    <div class="form-group">
-                        <strong><label for="forename">Apellido</label></strong>
-                        <input type="text" class="form-control" id="forename" placeholder="Perez">
+                    <div class="col-lg-3 col-md-4 col-xs-12 margined">
+                        <div class="form-group">
+                            <strong><label for="name">Apellido</label></strong>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Perez">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-5 col-xs-12 margined">
-                    <div class="form-group">
-                        <strong><label for="nationality">Nacionalidad</label></strong>
-                        <select id="nationality" class="form-control" placeholder="pais">
-                            <option name="nothing" value=""> Seleccionar pais...</option>
-                        </select>                    
+                    <div class="col-lg-4 col-md-4 col-xs-12 margined">
+                        <div class="form-group">
+                            <strong><label for="nationality">Nacionalidad</label></strong>
+                            <select id="nationality" name="nationality" class="form-control" placeholder="pais">
+                                <option name="nationality" value=""> Seleccionar pais...</option>
+                            </select>                    
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-5 col-xs-12 margined">
-                    <div class="row">
-                        <label for="ageMin" class="col-12"><strong>Edad actual</strong></label>
-                        <input type="number" class="form-control col-3" id="ageMin" name="ageMin" placeholder="0" min="0">
-                        <label for="ageMax" class="col-3 text-center">a</label>
-                        <input type="number" class="form-control col-3" id="ageMax" name="ageMax" placeholder="120" min="0">
+                    <div class="col-lg-3 col-md-3 col-xs-12 margined">
+                        <div class="row">
+                            <label for="ageMin" class="col-12 unpadded"><strong>Edad actual</strong></label>
+                            <input type="number" class="form-control col-4" id="ageMin" name="ageMin" placeholder="0" min="0">
+                            <label for="ageMax" class="col-3 text-center">a</label>
+                            <input type="number" class="form-control col-4" id="ageMax" name="ageMax" placeholder="90" min="0">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-12 margined">
+                        <div class="form-group">
+                            <strong><label for="sex">Sexo</label></strong>
+                            <select id="sex" name="sex" class="form-control" placeholder="Todos">
+                                <option name="sex" value=""> Todos</option>
+                                <option name="sex" value="M"> Hombre</option>
+                                <option name="sex" value="F"> Mujer</option>
+                                <option name="sex" value="U"> Desconocido</option>
+                            </select>                    
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-xs-12 margined">
+                        <br>
+                        <div class="row">
+                            <a class="btn btn-primary mb-2 upmargined" role="button" onclick="searchRedSheets()">Buscar&nbsp;&nbsp;<i class="fas fa-search"></i></a>&nbsp;&nbsp;
+                            <a class="btn btn-success mb-2 upmargined" role="button" id="saveButton" onclick="saveSearch()">Guardar búsqueda</a>
+                        </div>
                     </div>
                 </div>
             </form>
-        </div>
         <br>
         <hr/>
         <div class="col-lg-12 col-md-12 col-xs-12">
             <h3>Resultados de busqueda</h3>
+            <div id="query_info" class="row">
+
+            </div>
             <div id="query_results"class="row">
                 <!-- For each result it will be printed a card with the profile of the subject-->
             </div>

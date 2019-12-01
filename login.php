@@ -4,9 +4,7 @@ include_once 'logic.php';
 if(!empty($_POST["sid"]) && !empty($_POST["PIN"]))
 {
     
-    $usuarioex = $_POST["sid"];  
-    //$perfilex = darPerfilUsuario($usuarioex);
-    //$estadoex = darEstadoUsuario($usuarioex);   
+    $usuarioex = $_POST["sid"];   
     
     $valido = autenticar($_POST["sid"], $_POST["PIN"]);
     //$valido = TRUE; //COMENTAR EN PROD
